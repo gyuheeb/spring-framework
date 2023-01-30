@@ -1,5 +1,6 @@
 package com.douzone.hellospring.controller;
 
+import java.io.IOException;
 import java.io.Writer;
 
 import javax.servlet.http.HttpServletRequest;
@@ -56,7 +57,7 @@ public class HelloController {
 		//최대한 처리를 위해 수행됨.
 		@RequestMapping("/hello7")
 		public void hello7(HttpServletRequest request,
-			HttpServletResponse response, Writer out) {
+			HttpServletResponse response, Writer out) throws IOException {
 			
 			String name = request.getParameter("name");
 			out.write("hello "+name);
