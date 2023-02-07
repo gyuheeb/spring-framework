@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>파일 업로드 예제</h1>
-<form method="post" action="${pageContext.request.contextPath } /upload" 
+<form method="post" action="${pageContext.request.contextPath }/upload" 
 	  enctype="multipart/form-data">
 
 	<label>email:</label>
