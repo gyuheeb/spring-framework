@@ -12,9 +12,52 @@
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
         http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">	
 	
-	
-	<bean class="com.douzone.container.user.User" />
-	
-
+		<!--  기본 생성자로 빈 생성성하기  -->
+		<bean id="user" name="usr" class="com.douzone.container.user.User" />
+		
+		<!--  파라미터 1개인 생성자로 빈 생성성하기  -->
+			<bean id="user2" name="usr2" class="com.douzone.container.user.User">
+				<constructor-arg value="포비" />
+			</bean>
+		<!--  파라미터 2개(1개 이상)인 생성자로 빈 생성성하기 1  -->
+			<bean id="user3" class="com.douzone.container.user.User">
+				<constructor-arg value="3" />
+				<constructor-arg value="에디" />
+			</bean>
+		
+		<!--  파라미터 2개(1개 이상)인 생성자로 빈 생성성하기 2 (순서 다른 경우)  -->
+			<bean id="user4" class="com.douzone.container.user.User">
+			<constructor-arg index ="1" value="패치" />
+			<constructor-arg index ="0" value="4" />
+		</bean>
+		
+		<!--  setter 사용하기  -->
+			<bean id="user5" class="com.douzone.container.user.User">
+				<property name="no" value="5"/>
+				<property name="name" value="도라에몽"/>
+		</bean>
+		
+		<!-- DI  하기 -->
+			<bean id="freind" class="com.douzone.container.user.Freind">
+				<constructor-arg value="노진구" />
+			</bean>
+			<bean id="user6" class="com.douzone.container.user.User">
+				<property name="no" value="6"/>
+				<property name="name" value="도라미"/>
+				<property name="freind" ref="freind"/>
+			</bean>
+		
+		<!-- setter를 사용한 List 세팅하기 -->
+			<bean id="user7" class="com.douzone.container.user.User">
+					<property name="no" value="7"/>
+					<property name="name" value="짱구"/>
+					<property name="freinds">
+						<list>
+							<value>철수</value>
+							<value>유리</value>
+							<value>흰둥이</value>
+						</list>
+					</property>
+			</bean>
 </beans>
  
