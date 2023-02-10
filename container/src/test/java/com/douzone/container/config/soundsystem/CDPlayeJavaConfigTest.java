@@ -11,18 +11,20 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.douzone.container.soundsystem.CDPlayer;
 
-@ExtendWith(SpringExtension.class)
-@ContextConfiguration(locations= {"classpath:com/douzone/container/config/soundsystem/applicationContext.xml"})
-public class CDPlayerXmlConfigTest {
-	@Autowired
-	private CDPlayer cdPlayer;
 	
-	@Test
-	public void testCDPlayerNotNull() {
-		assertNotNull(cdPlayer);
-	}
-	@Test
-	public void testPlay() {
-		assertEquals("Playing 붕붕 by 김하온",cdPlayer.play());
-	}
+	@ExtendWith(SpringExtension.class)
+	@ContextConfiguration(classes= {CDPlayerConfig.class})
+	public class CDPlayeJavaConfigTest {
+		@Autowired
+		private CDPlayer cdPlayer;
+		
+		@Test
+		public void testCDPlayerNotNull() {
+			assertNotNull(cdPlayer);
+		}
+		
+		@Test
+		public void testPlay() {
+			assertEquals("Playing 붕붕 by 김하온",cdPlayer.play());
+		}
 }

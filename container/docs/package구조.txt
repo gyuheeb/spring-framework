@@ -1,0 +1,29 @@
+
+
+
+[src/main/java]
+	com.douzone.container.soundsystem
+		CDPlayer.java
+		CompactDisc.java
+	com.douzone.container.videosystem
+		DVDPlayer.java
+		DigitalVideoDisc.java
+		
+	com.douzone.container.config.soundsystem
+		CDPlayerConfig.java
+
+	com.douzone.container.config.videosystem
+		DVDPlayerConfig.java * 
+
+[src/main/resources]
+	com.douzone.container.config.soundsystem
+		applicationContext.xml
+		
+[src/test/java]
+
+	com.douzone.container.config.soundsystem
+		CDPlayerXmlConfigTest.java
+		CDPlayerJavaConfigTest.java
+	com.douzone.container.videosystem
+		DVDPlayerXmlConfigTest.java 
+		DVDPlayerJavaConfigTest.java 
