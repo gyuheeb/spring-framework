@@ -17,10 +17,29 @@ public class DVDPlayerConfig {
 	// 주입(Injection)하기1
 	// Bean 생성 메소드를 직접 호출하는 방법
 	// 생성자 주입
-	@Bean
+	@Bean("dvdPlayer")
 	public DVDPlayer dvdPlayer01() {
 		return new DVDPlayer(avengers());
 	}
 	
+
+	// 주입(Injection)하기2
+	//Parameter로 Bean을 전달하는 방법
+	// 생성자 주입
+	@Bean
+	public DVDPlayer dvdPlayer02(DigitalVideoDisc dvd) {
+		return new DVDPlayer(dvd);
+	}
+
+	// 주입(Injection)하기2
+	//Parameter로 Bean을 전달하는 방법
+	// Setter 주입
+	@Bean
+	public DVDPlayer dvdPlayer03(DigitalVideoDisc dvd) {
+		DVDPlayer dvdPlayer = new DVDPlayer();
+		dvdPlayer.setDvd(dvd);
+		
+		return dvdPlayer;
+	}
 	
 }
